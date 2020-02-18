@@ -3,6 +3,8 @@ Project 4 - Junior Web Developer program at OpenClassrooms
 
 Goal is to understand the basic principles of PHP and SQL by creating a blog with a CRUD system for a writer publishing his work through chapters.
 
+The project is requested to be built using the MVC structure.
+
 Functionalities to implement:
 
 # Users
