@@ -4,6 +4,7 @@
  * 
  * It allows to either get all information from the chapters database
  * or get a single specified chapter using a specified id
+ * it then returns this data to create a Chapter object with it
  * 
  * @author Felix Bole <felix.bole@yahoo.fr>
  */
