@@ -9,6 +9,9 @@
 
     <link rel="stylesheet" href="./public/css/style.css">
 
+    <!-- TinyMCE -->
+    <script src="https://cdn.tiny.cloud/1/dqg6jkjxix54zjp03l9uxaphwjepqs1x2nlb9upt1t0govbc/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
     <title>Alaska</title>
 </head>
 <body style="padding-top: 100px">
@@ -19,6 +22,8 @@
         </button>
     </nav>
     
-    <?= $content ?>
+    <div class="main">
+        <?= $content ?>
+    </div>
 </body>
 </html>
