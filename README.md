@@ -15,3 +15,11 @@ Functionalities to implement:
 - Login system
 - Access to basic CRUD on the chapters he writes
 - WYSIWYG system for the writer to have a more pleasant interface to write his work
+
+***
+
+TODO:
+--
+
+As of right now accessing the home page when specifying url : index.php?p=home works
+Aiming to redirect automatically to the home page when the user enters index.php
