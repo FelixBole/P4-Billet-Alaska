@@ -8,18 +8,20 @@ The project is requested to be built using the MVC structure.
 Functionalities to implement:
 
 # Users
-- Users can select a chapter to read
-- Users can comment under each chapter
+- Users can select a chapter to read 🤔
+- Users can comment under each chapter 🗣
 
 # Admin / Writer
-- Login system
+- Login system 🔒
 - Access to basic CRUD on the chapters he writes
-- WYSIWYG system for the writer to have a more pleasant interface to write his work
+- WYSIWYG system for the writer to have a more pleasant interface to write his work ✍️
 
 ***
 
 TODO:
 --
 
-As of right now accessing the home page when specifying url : index.php?p=home works
-Aiming to redirect automatically to the home page when the user enters index.php
+- View for single chapter 📖
+- Functionality to comment 🗣
+- Create report comment system 🖐
+- Build all backend service for administration and CRUD 🔒
