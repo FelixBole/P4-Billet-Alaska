@@ -14,7 +14,7 @@ class ControllerHome
     private $_chapterManager;
     private $_view;
 
-    public function __construct($p)
+    public function __construct()
     {
         //! Might need to handle potential errors here?
         $this->chapters();

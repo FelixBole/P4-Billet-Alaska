@@ -41,6 +41,7 @@ class Router
             } else {
                 // Redirect to home page
                 require_once('controller' . DIRECTORY_SEPARATOR . 'ControllerHome.php');
+                $this->_controller = new ControllerHome();
             }
         } catch (Exception $e) {
             $errorMsg = $e->getMessage();
