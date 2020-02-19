@@ -34,6 +34,18 @@ class Chapter
             }
         }
     }
+    
+    /**
+     * excerpt
+     *
+     * Creates an excerpt for the chapter content
+     * 
+     * @return string
+     */
+    public function excerpt() 
+    { 
+        return substr($this->_content, 0, 150) . '...';
+    }
 
     // Getters
     public function id() { return $this->_id; }

@@ -1,4 +1,17 @@
 .main {
     margin: 0 20px;
-    background: rgb(160, 153, 153);
+}
+
+.homeHeader {
+    border: 2px solid cyan; // Just for view
+
+    margin-bottom: 20px;
+}
+
+.chapterList {
+    border: 2px solid yellowgreen;
+
+    .chapterInfo {
+        border: 2px solid goldenrod;
+    }
 }

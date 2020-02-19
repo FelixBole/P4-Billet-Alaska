@@ -16,10 +16,12 @@
 </head>
 <body style="padding-top: 100px">
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <a class="navbar-brand" href="?p=home">Jean Forteroche</a>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a href="?p=home" class="nav-link">Home</a>
+            </li>
+        </ul>
     </nav>
     
     <div class="main">

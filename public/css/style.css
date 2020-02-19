@@ -1,5 +1,17 @@
 .main {
   margin: 0 20px;
-  background: #a09999;
+}
+
+.homeHeader {
+  border: 2px solid cyan;
+  margin-bottom: 20px;
+}
+
+.chapterList {
+  border: 2px solid yellowgreen;
+}
+
+.chapterList .chapterInfo {
+  border: 2px solid goldenrod;
 }
 /*# sourceMappingURL=style.css.map */
