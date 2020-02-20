@@ -25,7 +25,7 @@
     <div class="col-md-4">
         <ul class="list-group">
             <?php foreach ($chapters as $chapter): ?>
-                <li class="list-group-item"><a href="#" class="nav-link"><?= $chapter->title() ?></a></li>
+                <li class="list-group-item"><a href="?p=chapter&id=<?= $chapter->id() ?>" class="nav-link"><?= $chapter->title() ?></a></li>
             <?php endforeach; ?>
         </ul>
     </div>
