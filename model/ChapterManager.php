@@ -10,6 +10,11 @@
  */
 class ChapterManager extends Model
 {
+    public function getLatestChapters()
+    {
+        return $this->getLatest('chapters', 'Chapter');
+    }
+
     public function getChapters()
     {
         return $this->getAll('chapters', 'Chapter');

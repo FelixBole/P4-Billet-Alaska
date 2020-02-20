@@ -15,10 +15,10 @@
 
 <div class="row">
     <div class="col-md-8 chapterList">
-        <?php foreach ($chapters as $chapter): ?>
+        <?php foreach ($latestChapters as $latestChapter): ?>
             <div class="chapterInfo">
-                <h2><?= $chapter->title() ?></h2>
-                <p><?= $chapter->excerpt() ?></p>
+                <h2><?= $latestChapter->title() ?></h2>
+                <p><?= $latestChapter->excerpt() ?></p>
             </div>
         <?php endforeach; ?>
     </div>

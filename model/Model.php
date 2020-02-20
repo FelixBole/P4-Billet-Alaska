@@ -45,6 +45,36 @@ abstract class Model
     }
 
     /**
+     * getLatest
+     *
+     * Takes in a certain table and creates new objects with the returned data
+     * 
+     * Lists the result by latest entry
+     * 
+     * @param  $table table
+     *      table in database
+     * @param  $object
+     *      object to create
+     *
+     * @return array
+     */
+    protected function getLatest($table, $object)
+    {
+        $this->getDb();
+        // Array containing the result data of all the table items
+        $response = [];
+        $req = self::$_db->prepare('SELECT * FROM ' . $table . ' ORDER BY date_creation DESC');
+        $req->execute();
+
+        while ($data = $req->fetch(PDO::FETCH_ASSOC)) {
+            $response[] = new $object($data);
+        }
+
+        return $response;
+        $req->closeCursor();
+    }
+
+    /**
      * getAll
      *
      * Takes in a certain table and creates new objects with the returned data
@@ -61,7 +91,7 @@ abstract class Model
         $this->getDb();
         // Array containing the result data of all the table items
         $response = [];
-        $req = self::$_db->prepare('SELECT * FROM ' . $table . ' ORDER BY id DESC');
+        $req = self::$_db->prepare('SELECT * FROM ' . $table . ' ORDER BY id');
         $req->execute();
 
         while ($data = $req->fetch(PDO::FETCH_ASSOC)) {

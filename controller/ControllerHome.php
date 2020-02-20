@@ -30,8 +30,12 @@ class ControllerHome
     public function chapters()
     {
         $this->_chapterManager = new ChapterManager();
+        $latestChapters = $this->_chapterManager->getLatestChapters();
         $chapters = $this->_chapterManager->getChapters();
         $this->_view = new View('Home');
-        $this->_view->generate(array('chapters' => $chapters));
+        $this->_view->generate(array(
+            'chapters' => $chapters,
+            'latestChapters' => $latestChapters
+        ));
     }
 }
