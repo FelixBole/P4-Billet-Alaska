@@ -33,16 +33,16 @@ class CommentManager extends Model
     {
         $this->getDb();
         $response = [];
-        $req = parent::$_db->prepare('SELECT chapters.*, comments.*
-            FROM chapters
-            LEFT JOIN comments
+        $req = parent::$_db->prepare('SELECT chapters.id, comments.*
+            FROM comments
+            LEFT JOIN chapters
             ON (chapters.id = comments.id_chapter)
-            WHERE chapter.id = ?
+            WHERE chapters.id = ?
         ');
         $req->execute(array($id));
 
         while ($data = $req->fetch(PDO::FETCH_ASSOC)) {
-            $response[] = new Chapter($data);
+            $response[] = new Comment($data);
         }
 
         return $response;
