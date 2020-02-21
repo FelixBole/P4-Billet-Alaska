@@ -19,6 +19,7 @@
             <div class="chapterInfo">
                 <h2><?= $latestChapter->title() ?></h2>
                 <p><?= $latestChapter->excerpt() ?></p>
+                <a href="?p=chapter&id=<?= $latestChapter->id() ?>" class="nav-link">Lire le chapitre</a>
             </div>
         <?php endforeach; ?>
     </div>

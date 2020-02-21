@@ -8,10 +8,10 @@
 }
 
 .chapterList {
-  border: 2px solid yellowgreen;
+  border: none;
 }
 
 .chapterList .chapterInfo {
-  border: 2px solid goldenrod;
+  border: none;
 }
 /*# sourceMappingURL=style.css.map */
