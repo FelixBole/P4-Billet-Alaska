@@ -116,4 +116,17 @@ abstract class Model
         return $response;
         $req->closeCursor();
     }
+
+/*     protected function add($table, $object, array $data)
+    {
+        $sql_parts = [];
+        $attributes = [];
+
+        foreach($data as $k => $v) {
+            $sql_parts[] = "$k = ?";
+            $attributes[] = $v;
+        }
+
+        $sql_parts = implode(', ', $sql_parts);
+    } */
 }

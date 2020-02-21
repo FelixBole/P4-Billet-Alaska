@@ -48,4 +48,16 @@ class CommentManager extends Model
         return $response;
         $req->closeCursor();
     }
+
+
+    //!!! Not working
+    public function newComment($name, $message, $id_chapter)
+    {
+        $this->getDb();
+        $req = parent::$_db->query(
+            'INSERT INTO comments
+            (id_chapter, name, message, date_created)
+            VALUES (' . $id_chapter . ', ' . $name . ', ' . $message . ', NOW())'
+        );
+    }
 }
