@@ -7,6 +7,7 @@
 class Chapter
 {
     private $_id;
+    private $_chapter;
     private $_title;
     private $_content;
     private $_date;
@@ -49,6 +50,7 @@ class Chapter
 
     // Getters
     public function id() { return $this->_id; }
+    public function chapter() { return $this->_chapter; }
     public function title() { return $this->_title; }
     public function content() { return $this->_content; }
     public function date() { return $this->_date; }
@@ -59,6 +61,14 @@ class Chapter
         $id = (int)$id;
         if ($id > 0) {
             $this->_id = $id;
+        }
+    }
+
+    public function setChapter($chapter)
+    {
+        $chapter = (int)$chapter;
+        if ($chapter > 0) {
+            $this->_chapter = $chapter;
         }
     }
 

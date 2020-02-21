@@ -120,7 +120,7 @@ abstract class Model
     {
         $this->getDb();
         $response = [];
-        $req = self::$_db->prepare('SELECT id, title, content, DATE_FORMAT(date_creation, "%d/%m/%Y à %Hh/%imin/%ss") 
+        $req = self::$_db->prepare('SELECT id, chapter_number AS chapter, title, content, DATE_FORMAT(date_creation, "%d/%m/%Y à %Hh/%imin/%ss") 
             AS date 
             FROM ' . $table . '
             WHERE id = ?'
