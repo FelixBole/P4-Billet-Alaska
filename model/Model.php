@@ -11,7 +11,7 @@
  */
 abstract class Model
 {
-    private static $_db;
+    protected static $_db;
 
  
     /**
@@ -63,7 +63,7 @@ abstract class Model
         $this->getDb();
         // Array containing the result data of all the table items
         $response = [];
-        $req = self::$_db->prepare('SELECT * FROM ' . $table . ' ORDER BY date_creation DESC');
+        $req = self::$_db->prepare('SELECT * FROM ' . $table . ' ORDER BY id DESC');
         $req->execute();
 
         while ($data = $req->fetch(PDO::FETCH_ASSOC)) {
@@ -100,31 +100,13 @@ abstract class Model
 
         return $response;
         $req->closeCursor();
-    }
+    } 
 
-    /**
-     * getOne
-     *
-     * Returns a single entry from a specified table with a specific id
-     * 
-     * @param  mixed $table
-     *      table in database
-     * @param  mixed $object
-     *      object to create
-     * @param  int $id
-     *      id of the table entry to return
-     *
-     * @return array
-     */
     protected function getOne($table, $object, $id)
     {
         $this->getDb();
         $response = [];
-        $req = self::$_db->prepare('SELECT id, chapter_number AS chapter, title, content, DATE_FORMAT(date_creation, "%d/%m/%Y à %Hh/%imin/%ss") 
-            AS date 
-            FROM ' . $table . '
-            WHERE id = ?'
-        );
+        $req = self::$_db->prepare('SELECT * FROM ' . $table . ' WHERE id = ?');
         $req->execute(array($id));
 
         while ($data = $req->fetch(PDO::FETCH_ASSOC)) {
@@ -134,46 +116,4 @@ abstract class Model
         return $response;
         $req->closeCursor();
     }
-
-    protected function getNext($table, $object, $id)
-    {
-        $this->getDb();
-        $response = [];
-        $req = self::$_db->prepare('SELECT id, chapter_number AS chapter, title, content, DATE_FORMAT(date_creation, "%d/%m/%Y à %Hh/%imin/%ss") AS date 
-            FROM ' . $table . '
-            WHERE id > ?
-            ORDER BY id
-            LIMIT 1'
-        );
-        $req->execute(array($id));
-
-        while ($data = $req->fetch(PDO::FETCH_ASSOC)) {
-            $response[] = new $object($data);
-        }
-
-        return $response;
-        $req->closeCursor();
-    }
-
-    protected function getPrevious($table, $object, $id)
-    {
-        $this->getDb();
-        $response = [];
-        $req = self::$_db->prepare('SELECT id, chapter_number AS chapter, title, content, DATE_FORMAT(date_creation, "%d/%m/%Y à %Hh/%imin/%ss") AS date 
-            FROM ' . $table . '
-            WHERE id < ?
-            ORDER BY id
-            LIMIT 1'
-        );
-        $req->execute(array($id));
-
-        while ($data = $req->fetch(PDO::FETCH_ASSOC)) {
-            $response[] = new $object($data);
-        }
-
-        return $response;
-        $req->closeCursor();
-    }
-
-    
 }

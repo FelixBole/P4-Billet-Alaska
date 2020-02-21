@@ -22,16 +22,63 @@ class ChapterManager extends Model
 
     public function getChapter($id)
     {
-        return $this->getOne('chapters', 'Chapter', $id);
+        // Could use 
+        // return $this->getOne('chapters', 'Chapter', $id);
+
+        $this->getDb();
+        $response = [];
+        $req = parent::$_db->prepare('SELECT id, chapter_number AS chapter, title, content, DATE_FORMAT(date_creation, "%d/%m/%Y à %Hh/%imin/%ss") 
+            AS date 
+            FROM chapters
+            WHERE id = ?'
+        );
+        $req->execute(array($id));
+
+        while ($data = $req->fetch(PDO::FETCH_ASSOC)) {
+            $response[] = new Chapter($data);
+        }
+
+        return $response;
+        $req->closeCursor();
     }
 
     public function getNextChapter($id)
     {
-        return $this->getNext('chapters', 'Chapter', $id);
+        $this->getDb();
+        $response = [];
+        $req = parent::$_db->prepare('SELECT id, chapter_number AS chapter, title, content, DATE_FORMAT(date_creation, "%d/%m/%Y à %Hh/%imin/%ss") AS date 
+            FROM chapters
+            WHERE id > ?
+            ORDER BY id
+            LIMIT 1'
+        );
+        $req->execute(array($id));
+
+        while ($data = $req->fetch(PDO::FETCH_ASSOC)) {
+            $response[] = new Chapter($data);
+        }
+
+        return $response;
+        $req->closeCursor();
     }
 
     public function getPreviousChapter($id)
     {
-        return $this->getPrevious('chapters', 'Chapter', $id);
+        $this->getDb();
+        $response = [];
+        $req = parent::$_db->prepare('SELECT id, chapter_number AS chapter, title, content, DATE_FORMAT(date_creation, "%d/%m/%Y à %Hh/%imin/%ss") AS date 
+            FROM chapters
+            WHERE id < ?
+            ORDER BY id
+            LIMIT 1'
+        );
+        $req->execute(array($id));
+
+        while ($data = $req->fetch(PDO::FETCH_ASSOC)) {
+            $response[] = new Chapter($data);
+        }
+
+        return $response;
+        $req->closeCursor();
     }
 }
