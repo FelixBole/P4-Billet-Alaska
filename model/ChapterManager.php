@@ -24,4 +24,14 @@ class ChapterManager extends Model
     {
         return $this->getOne('chapters', 'Chapter', $id);
     }
+
+    public function getNextChapter($id)
+    {
+        return $this->getNext('chapters', 'Chapter', $id);
+    }
+
+    public function getPreviousChapter($id)
+    {
+        return $this->getPrevious('chapters', 'Chapter', $id);
+    }
 }

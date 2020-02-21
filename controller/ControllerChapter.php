@@ -29,7 +29,13 @@ class ControllerChapter
     {
         $this->_chapterManager = new ChapterManager();
         $chapter = $this->_chapterManager->getChapter($id);
+        $nextChapter = $this->_chapterManager->getNextChapter($id);
+        $previousChapter = $this->_chapterManager->getPreviousChapter($id);
         $this->_view = new View('Chapter');
-        $this->_view->generate(array('chapter' => $chapter));
+        $this->_view->generate(array(
+            'chapter' => $chapter,
+            'nextChapter' => $nextChapter,
+            'previousChapter' => $previousChapter
+        ));
     }
 }

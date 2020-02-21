@@ -135,5 +135,45 @@ abstract class Model
         $req->closeCursor();
     }
 
+    protected function getNext($table, $object, $id)
+    {
+        $this->getDb();
+        $response = [];
+        $req = self::$_db->prepare('SELECT id, chapter_number AS chapter, title, content, DATE_FORMAT(date_creation, "%d/%m/%Y à %Hh/%imin/%ss") AS date 
+            FROM ' . $table . '
+            WHERE id > ?
+            ORDER BY id
+            LIMIT 1'
+        );
+        $req->execute(array($id));
+
+        while ($data = $req->fetch(PDO::FETCH_ASSOC)) {
+            $response[] = new $object($data);
+        }
+
+        return $response;
+        $req->closeCursor();
+    }
+
+    protected function getPrevious($table, $object, $id)
+    {
+        $this->getDb();
+        $response = [];
+        $req = self::$_db->prepare('SELECT id, chapter_number AS chapter, title, content, DATE_FORMAT(date_creation, "%d/%m/%Y à %Hh/%imin/%ss") AS date 
+            FROM ' . $table . '
+            WHERE id < ?
+            ORDER BY id
+            LIMIT 1'
+        );
+        $req->execute(array($id));
+
+        while ($data = $req->fetch(PDO::FETCH_ASSOC)) {
+            $response[] = new $object($data);
+        }
+
+        return $response;
+        $req->closeCursor();
+    }
+
     
 }
