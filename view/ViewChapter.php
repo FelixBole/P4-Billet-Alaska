@@ -1,12 +1,9 @@
 <?php 
-// Check POST
 if (isset($_POST['name']) && isset($_POST['message'])) {
     // Create comment in database
 } else {
-    $errMsg = "Veuillez remplir tous les champs du formulaire de commentaire";
+    // Msg d'erreur
 }
-
-var_dump($comments);
 ?>
 
 
@@ -51,14 +48,14 @@ var_dump($comments);
 <div class="row">
     <div class="col-md-6">
         <h2>Poster un nouveau commentaire</h2>
-        <form method="post">
+        <form action="?p=comment&id=<?= $_GET['id'] ?>" method="post">
             <div class="form-group">
-                <input type="text" name="name" maxlength="30" class="form-control" placeholder="Nom">
+                <input type="text" maxlength="30" class="form-control" placeholder="Nom" name="name">
             </div>
             <div class="form-group">
                 <textarea class="form-control" rows="5" placeholder="Votre commentaire" name="message"></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Poster</button>
+            <button type="submit" class="btn btn-primary" href="<?= 'index.php?p=comment&id=' . $_GET['id'] ?>">Poster</button>
         </form>
     </div>
 </div>

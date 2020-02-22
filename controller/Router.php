@@ -34,7 +34,19 @@ class Router
                 $controllerFile = "controller/" . $controllerClass . ".php";
                 if (file_exists($controllerFile)) {
                     require_once($controllerFile);
-                    $this->_controller = new $controllerClass($p);
+
+                    // If ID is specified we send an array to the constructor
+                    if (isset($_GET['id'])) {
+                        $id = (int)$_GET['id'];
+                        $parameters = array(
+                            'id' => $id,
+                            'p' => $p
+                        );
+                        $this->_controller = new $controllerClass($parameters);
+                    } else {
+                        $this->_controller = new $controllerClass($p);
+                    }
+
                 } else {
                     throw new Exception('Page non trouvée', 1);
                 }

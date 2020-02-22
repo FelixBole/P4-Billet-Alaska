@@ -54,10 +54,11 @@ class CommentManager extends Model
     public function newComment($name, $message, $id_chapter)
     {
         $this->getDb();
-        $req = parent::$_db->query(
-            'INSERT INTO comments
+        $req = parent::$_db->prepare(
+            "INSERT INTO comments
             (id_chapter, name, message, date_created)
-            VALUES (' . $id_chapter . ', ' . $name . ', ' . $message . ', NOW())'
+            VALUES (?, ?, ?, NOW())"
         );
+        $req->execute(array($id_chapter, $name, $message));
     }
 }
