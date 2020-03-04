@@ -24,4 +24,20 @@ class CommentModel extends Model
             WHERE com.id_chapter = ?
             ",[$id], false);
     }
+
+    public function countAllFromChapter($id) {
+        $res = $this->query("SELECT COUNT(*) as commentsAmount 
+            FROM comments com 
+            LEFT JOIN chapters cha
+            ON com.id_chapter = cha.id
+            WHERE com.id_chapter = ?
+            ", [$id], false);
+        // extract($res);
+        // die(var_dump($res[0]->commentsAmount));
+        return $res[0]->commentsAmount;
+    }
+
+    public function getReports($id) {
+        return $this->query("SELECT reports FROM comments WHERE id = ?", [$id], true);
+    }
 }

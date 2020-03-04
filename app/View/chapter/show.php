@@ -31,9 +31,19 @@
 <h3>Commentaires</h3>
 
 <?php foreach($comments as $comment): ?>
-    <div class="col-sm-6">
-        <h4><?= $comment->name ?></h3>
-        <p><?= $comment->message ?></p>
+    <div class="col-sm-6 userComment">
+        <div class="userCommentInfo">
+            <h5><?= $comment->name ?></h5>
+            <p>le <?= $comment->date ?></p>
+            <!-- Sending id of comment with a form to be able to redirect with the chapter ID after -->
+        </div>
+        <div class="userCommentMessage">
+            <p><?= $comment->message ?></p>
+        </div>
+        <form action="?p=comment.report&id=<?= $chapter->id ?>" method="post">
+            <input type="hidden" name="id" value="<?= $comment->id; ?>">
+            <button class="reportBtn"> Signaler</button>
+        </form>
     </div>
 <?php endforeach; ?>
 

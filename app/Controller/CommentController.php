@@ -27,4 +27,18 @@ class CommentController extends ChapterController
         $form = new BootstrapForm($_POST);
         $this->render('chapter.show', compact('form'));
     }
+
+    public function report() {
+        $reports = $this->Comment->getReports($_POST['id']);
+
+        // Add a report
+        $reports = $reports->reports + 1;
+
+        // Update
+        $this->Comment->update($_POST['id'], [
+            'reports' => $reports
+        ]);
+
+        return $this->show();
+    }
 }

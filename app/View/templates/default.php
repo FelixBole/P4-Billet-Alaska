@@ -10,9 +10,12 @@
     <title><?= App::getInstance()->title ?></title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/starter-template/">
-
+    
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+    <!-- Personal stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
 
     <!-- Favicons -->
     <meta name="msapplication-config" content="/docs/4.4/assets/img/favicons/browserconfig.xml">
@@ -40,6 +43,7 @@
     <link href="starter-template.css" rel="stylesheet">
 </head>
 <body>
+
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
         <a class="navbar-brand" href="index.php">Alaska</a>
     </nav>

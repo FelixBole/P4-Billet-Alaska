@@ -1,17 +1,42 @@
-.main {
-    margin: 0 20px;
-}
+.userComment {
+    background-color: rgba(189, 183, 107, 0.678);
+    border: 1px solid beige;
+    border-radius: 10px;
 
-.homeHeader {
-    border: 2px solid cyan; // Just for view
+    .userCommentInfo {
+        border-bottom: 1px solid cadetblue;
 
-    margin-bottom: 20px;
-}
+            h5 {
+                display: inline;
+                color: darkblue;
+                font-weight: bold;
+            }
 
-.chapterList {
-    border: none;
+            p {
+                display: inline;
+                font-style: italic;
+                margin: 0;
+            }
 
-    .chapterInfo {
-        border: none;
+        }
+        
+        .userCommentMessage {
+            padding-top: 5px;
+            margin-top: 5px;
+            margin-bottom: 2px;
+            border-radius: 5px;
+            background-color: white;
+        }
+
+        form {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 5px;
+
+            .reportBtn {
+                background: none;
+                border: none;
+                color: rgb(189, 16, 16);
+            }
+        }
     }
-}
