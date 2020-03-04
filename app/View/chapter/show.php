@@ -1,4 +1,4 @@
-<a href="index.php?p=home">Home</a>
+<a href="index.php">Home</a>
 
 <h1><?= $chapter->title ?></h1>
 
