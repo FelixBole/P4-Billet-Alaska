@@ -41,7 +41,7 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="index.php">Navbar</a>
+        <a class="navbar-brand" href="index.php">Alaska</a>
     </nav>
 
     <main role="main" class="container" style='padding-top: 100px;'>

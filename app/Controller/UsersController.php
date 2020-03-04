@@ -6,7 +6,7 @@ use App;
 use Core\Auth\DBAuth;
 use Core\HTML\BootstrapForm;
 
-class UserController extends AppController{
+class UsersController extends AppController{
 
     public function login()
     {
