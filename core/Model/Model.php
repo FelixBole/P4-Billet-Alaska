@@ -110,5 +110,9 @@ abstract class Model {
             );
         }
     }
+    
+    public function exists($id) {
+        return $this->db->query("SELECT * FROM {$this->table} WHERE id = $id");
+    }
 
 }
