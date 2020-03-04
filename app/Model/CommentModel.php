@@ -37,7 +37,23 @@ class CommentModel extends Model
         return $res[0]->commentsAmount;
     }
 
-    public function getReports($id) {
+    public function getReportsNumber($id) {
+        // Look for reports where the id is the comment id
         return $this->query("SELECT reports FROM comments WHERE id = ?", [$id], true);
+    }
+
+    public function getReports($id) {
+        // ChapterId
+        return $this->query("SELECT reports FROM comments WHERE id_chapter = ?", [$id], true);
+    }
+
+    public function listReported($id) {
+        // $id has to be the chapterId
+        return $this->query("SELECT * FROM comments WHERE id_chapter = ? AND reports > 0 ORDER BY reports DESC", [$id], false);
+    }
+
+    public function listUnreported($id) {
+        // $id has to be the chapterId
+        return $this->query("SELECT * FROM comments WHERE id_chapter = ? AND reports = 0", [$id], false);
     }
 }

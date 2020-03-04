@@ -27,16 +27,29 @@ class CommentController extends AppController {
     }
 
     public function manage() {
-        $comments = $this->Comment->getAllFromChapter($_GET['id']);
+        $comments = $this->Comment->listUnreported($_GET['id']);
+        $reportedComments = $this->Comment->listReported($_GET['id']);
+        $reportCount = [];
 
-        $this->render('admin.comment.manage', compact('comments'));
+        foreach($reportedComments as $reportedComment) {
+            $reportCount[$reportedComment->reports] = $this->Comment->getReports($_GET['id']);
+        }
+
+        $this->render('admin.comment.manage', compact('comments', 'reportedComments', 'reportCount'));
     }
 
     public function delete() {
         if(!empty($_POST)) {
             $result = $this->Comment->delete($_POST['id']);
-            return $this->index();
         }
+        return $this->manage();
+    }
+
+    public function clear() {
+        $result = $this->Comment->update($_POST['id'], [
+            'reports' => 0
+        ]);
+        return $this->manage();
     }
 
 }

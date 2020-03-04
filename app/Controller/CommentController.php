@@ -29,7 +29,7 @@ class CommentController extends ChapterController
     }
 
     public function report() {
-        $reports = $this->Comment->getReports($_POST['id']);
+        $reports = $this->Comment->getReportsNumber($_POST['id']);
 
         // Add a report
         $reports = $reports->reports + 1;
