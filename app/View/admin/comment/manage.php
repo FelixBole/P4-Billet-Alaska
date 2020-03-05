@@ -18,8 +18,8 @@
                 <tr>
                     <td><?= $reported->name ?></td>
                     <td><?= $reported->message ?></td>
-                    <!-- Just like for comment.index - could be better -->
-                    <td><?= $reportCount[$reported->reports]->reports ?></td>
+                    <!-- Fixed ambiguity, do the same in index -->
+                    <td><?= $reported->reports ?></td>
                     <td>
                         <form action="?p=admin.comment.clear&id=<?= $_GET['id'] ?>" method="post" style="display: inline;">
                             <input type="hidden" name="id" value="<?= $reported->id; ?>">

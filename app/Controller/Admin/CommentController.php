@@ -29,13 +29,9 @@ class CommentController extends AppController {
     public function manage() {
         $comments = $this->Comment->listUnreported($_GET['id']);
         $reportedComments = $this->Comment->listReported($_GET['id']);
-        $reportCount = [];
 
-        foreach($reportedComments as $reportedComment) {
-            $reportCount[$reportedComment->reports] = $this->Comment->getReports($_GET['id']);
-        }
-
-        $this->render('admin.comment.manage', compact('comments', 'reportedComments', 'reportCount'));
+        // var_dump($reportedComments);
+        $this->render('admin.comment.manage', compact('comments', 'reportedComments'));
     }
 
     public function delete() {

@@ -5,11 +5,18 @@
   ***
 - Add commenting functionnality
   - ✔️ Create database table
-  - Add report system on comments
+  - ✔️ Add report system on comments
+  - Deactivate report button once clicked
+- Verify all user inputs
 
 ***
 ## Backend
 - ✔️ Login 🔒
 - ✔️ Administration pannel for chapters 💻
 - ✔️ CRUD
-- Administration pannel for comments 💻
+- ✔️ Administration pannel for comments 💻
+
+***
+## Urls
+- Fix router
+- Create Menu
