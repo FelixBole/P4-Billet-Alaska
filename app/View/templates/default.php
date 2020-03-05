@@ -61,5 +61,6 @@
         </div>
 
     </main><!-- /.container -->
+    <script src="/P4-Alaska/public/js/tinymce.js"></script>
 </body>
 </html>

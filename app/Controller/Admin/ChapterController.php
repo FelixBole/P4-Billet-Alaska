@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use Core\HTML\BootstrapForm;
+use Core\HTML\TinyMCEForm;
 
 class ChapterController extends AppController {
 
@@ -43,7 +44,8 @@ class ChapterController extends AppController {
         }
 
         $form = new BootstrapForm($_POST);
-        $this->render('admin.chapter.edit', compact('form', 'errors'));
+        $tinyForm = new TinyMCEForm($_POST);
+        $this->render('admin.chapter.edit', compact('form', 'tinyForm', 'errors'));
     }
 
     public function edit() {
@@ -66,7 +68,8 @@ class ChapterController extends AppController {
         $chapter = $this->Chapter->find($_GET['id']);
 
         $form = new BootstrapForm($chapter);
-        $this->render('admin.chapter.edit', compact('form'));
+        $tinyForm = new TinyMCEForm($chapter);
+        $this->render('admin.chapter.edit', compact('form', 'tinyForm'));
     }
 
     public function delete() {
