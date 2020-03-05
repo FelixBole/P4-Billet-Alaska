@@ -30,6 +30,12 @@
 
 <h3>Commentaires</h3>
 
+<?php if(!is_null($errors)): ?>
+    <div class="alert alert-danger">
+        <?= $errors ?>
+    </div>
+<?php endif; ?>
+
 <?php foreach($comments as $comment): ?>
     <div class="col-sm-6 userComment">
         <div class="userCommentInfo">

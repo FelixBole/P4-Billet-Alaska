@@ -22,24 +22,28 @@ class ChapterController extends AppController {
     }
 
     public function new() {
-
+        
         // Update to database
+        $errors = "";
         if(!empty($_POST)) {
-
-            $result = $this->Chapter->create(
-                [
-                    'title' => $_POST['title'],
-                    'content' => $_POST['content']
-                ]
-            );
-            if ($result) {
-                // header('Location: admin.php');
-                return $this->index();
+            if(empty($_POST['title']) || empty($_POST['content'])) {
+                $errors = "Certains champs sont manquants";
+            } else {
+                $result = $this->Chapter->create(
+                    [
+                        'title' => htmlspecialchars($_POST['title']),
+                        'content' => nl2br(htmlspecialchars($_POST['content']))
+                    ]
+                );
+                if ($result) {
+                    // header('Location: admin.php');
+                    return $this->index();
+                }
             }
         }
 
         $form = new BootstrapForm($_POST);
-        $this->render('admin.chapter.edit', compact('form'));
+        $this->render('admin.chapter.edit', compact('form', 'errors'));
     }
 
     public function edit() {
@@ -49,8 +53,8 @@ class ChapterController extends AppController {
             $result = $this->Chapter->update(
                 $_GET['id'],
                 [
-                    'title' => $_POST['title'],
-                    'content' => $_POST['content']
+                    'title' => htmlspecialchars($_POST['title']),
+                    'content' => nl2br(htmlspecialchars($_POST['content']))
                 ]
             );
             if ($result) {

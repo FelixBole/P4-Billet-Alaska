@@ -11,21 +11,28 @@ class CommentController extends ChapterController
 {
     public function newComment() {
         if(!empty($_POST)) {
-            $result = $this->Comment->create(
-                [
-                    'id_chapter' => $_GET['id'],
-                    'name' => $_POST['name'],
-                    'message' => $_POST['message']
-                ]
-            );
-            if($result) {
-                // Redirect to chapter with the newly added comment
-                return $this->show();
+
+            
+            $errors = "";
+            // Verify inputs
+            if(empty($_POST['name']) || empty($_POST['message'])) {
+                 $errors = "Merci de remplir les champs du formulaire";
+            } else {
+                $result = $this->Comment->create(
+                    [
+                        'id_chapter' => $_GET['id'],
+                        'name' => htmlspecialchars($_POST['name']),
+                        'message' => nl2br(htmlspecialchars( $_POST['message']))
+                    ]
+                );
+                if($result) {
+                    // Redirect to chapter with the newly added comment
+                    return $this->show();
+                }
             }
         }
-
-        $form = new BootstrapForm($_POST);
-        $this->render('chapter.show', compact('form'));
+        //-> Enhanced : Add an optional param to show($errors = null) and send it from here to pass errors to show
+        $this->show($errors);
     }
 
     public function report() {
