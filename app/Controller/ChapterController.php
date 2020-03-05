@@ -30,17 +30,9 @@ class ChapterController extends AppController
         $comments = $this->Comment->getAllFromChapter($_GET['id']);
 
         // Check if there are previous of next chapters
-        $nextChapter = null;
-        $prevChapter = null;
-        if(!empty($this->Chapter->exists($_GET['id'] + 1))) {
-            $nextChapter = $this->Chapter->find($_GET['id'] + 1);
-        }
-        if(!empty($this->Chapter->exists($_GET['id'] - 1))) {
-            $prevChapter = $this->Chapter->find($_GET['id'] - 1);
-        }
+        $nextChapter = $this->Chapter->next($_GET['id']); // Returns either false or the entity object
+        $prevChapter = $this->Chapter->previous($_GET['id']);
 
-        // $nextChapter = $this->Chapter->exists($_GET['id'] + 1);
-        // $prevChapter = $this->Chapter->exists($_GET['id'] - 1);
         // Commenting form
         $form = new BootstrapForm();
 

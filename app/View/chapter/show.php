@@ -5,10 +5,10 @@
         <p><?= $chapter->content ?></p>
 
         <nav class="nav nav-pills nav-fill justify-content-end">
-            <?php if(!is_null($prevChapter)): ?>
+            <?php if($prevChapter !== false): ?>
                 <a href="<?= $prevChapter->url ?>" class="nav-item nav-link">Chapitre précédent</a>
             <?php endif; ?>
-            <?php if(!is_null($nextChapter)): ?>
+            <?php if($nextChapter !== false): ?>
                 <a href="<?= $nextChapter->url ?>" class="nav-item nav-link">Chapitre suivant</a>
             <?php endif; ?>
         </nav>

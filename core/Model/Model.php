@@ -33,16 +33,33 @@ abstract class Model {
         }
     }
 
+    /**
+     * Returns all the records in a table
+     * 
+     * @return array
+     */
     public function all()
     {
         return $this->query('SELECT * FROM ' . $this->table);
     }
 
+    /**
+     * Finds a specific record in db
+     * 
+     * @param int $id The id of the record to find
+     * @return object 
+     */
     public function find($id)
     {
         return $this->query("SELECT * FROM {$this->table} WHERE id = ?", [$id], true);
     }
 
+    /**
+     * Updates a record in db
+     * 
+     * @param int $id The id of the field to update
+     * @param array $fields The fields to update
+     */
     public function update($id, $fields)
     {
         $sql_parts = [];
@@ -60,6 +77,11 @@ abstract class Model {
         return $this->query("UPDATE {$this->table} SET $sql_fields WHERE id = ?", $attributes, true);
     }
 
+    /**
+     * Creates a new entry in db
+     * 
+     * @param array $fields The fields to add in the new entry
+     */
     public function create($fields)
     {
         $sql_parts = [];
@@ -74,6 +96,11 @@ abstract class Model {
         return $this->query("INSERT INTO {$this->table} SET $sql_fields", $attributes, true);
     }
 
+    /**
+     * Deletes a record
+     * 
+     * @param int $id The id of the field to delete
+     */
     public function delete($id)
     {
         // var_dump($this->table, $id);
@@ -92,6 +119,14 @@ abstract class Model {
         return $return;
     }
 
+    /**
+     * A simpler query that automatically detects a query from a prepare
+     * 
+     * @param string $statement SQL statement
+     * @param array|null $attributes the attributes for a prepared statement
+     * @param bool $one if we want either one or several results
+     * @return mixed 
+     */
     public function query($statement, $attributes = null, $one = false) 
     {
         if ($attributes) {
@@ -111,8 +146,34 @@ abstract class Model {
         }
     }
     
+    /**
+     * Checks if a record exists given a specific id
+     * 
+     * @param int $id The $id of the record to check
+     * @return mixed returns the entity or false
+     */
     public function exists($id) {
-        return $this->db->query("SELECT * FROM {$this->table} WHERE id = $id");
+        return $this->query("SELECT * FROM {$this->table} WHERE id = ?", [$id], true);
+    }
+
+    /**
+     * Finds the previous record in the table from the given id
+     * 
+     * @param int $id The id of the starting point
+     * @return mixed returns either the entity or false
+     */
+    public function previous($id) {
+        return $this->query("SELECT * FROM {$this->table} WHERE id = (SELECT MAX(id) FROM {$this->table} WHERE id < ?)", [$id], true);
+    }
+
+    /**
+     * Finds the next record in the table from the given id
+     * 
+     * @param int $id The id of the starting point
+     * @return mixed returns either the entity or false
+     */
+    public function next($id) {
+        return $this->query("SELECT * FROM {$this->table} WHERE id = (SELECT MIN(id) FROM {$this->table} WHERE id > ?)", [$id], true);
     }
 
 }
