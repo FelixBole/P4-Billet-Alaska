@@ -21,10 +21,10 @@
 
     <div class="col-sm-3">
         <ul class="list-group chapterList">
-            <?php $chapNum = 0; // To list chapters by number and not title ?>
+            <?php $chapNum = 0; ?>
             <?php foreach($chapters as $oneChapter): ?>
                 <?php $chapNum += 1; ?>
-                <li class="list-group-item <?php if($_GET['id'] == $chapNum) {echo "activeChapter";} ?>">
+                <li class="list-group-item <?php if($_GET['id'] == $oneChapter->id) {echo "activeChapter";} ?>">
                     <a href="<?= $oneChapter->url ?>" class="nav-link" style="color:black;">
                         <i class="fas fa-arrow-alt-circle-right"></i>
                         <span>Chapitre <?= $chapNum ?></span>
