@@ -56,7 +56,8 @@ class ChapterController extends AppController {
                 $_GET['id'],
                 [
                     'title' => htmlspecialchars($_POST['title']),
-                    'content' => nl2br(htmlspecialchars($_POST['content']))
+                    // Deleted nlb2r(htmlspecialchars()) because of tinyMCE
+                    'content' => $_POST['content']
                 ]
             );
             if ($result) {

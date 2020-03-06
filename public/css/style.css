@@ -16,7 +16,8 @@
 }
 
 .latestChaptersContainer {
-  border: 2px solid purple;
+  border: none;
+  border-right: 2px solid purple;
   padding: 30px;
 }
 
@@ -35,14 +36,36 @@
   font-style: italic;
 }
 
-.latestChaptersContainer .latestChapterSingle .latestChapterSingleContent, .latestChaptersContainer .latestChapterSingle .latestChapterSingleContent p {
+.latestChaptersContainer .latestChapterSingle .latestChapterSingleContent {
   color: black;
   background: #ececec;
   padding: 10px;
 }
 
-.readMoreLink {
+.readMoreLinkContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  justify-items: flex-end;
+  width: 100%;
+}
+
+.readMoreLinkContainer .readMoreLink {
   color: purple;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.readMoreLinkContainer .readMoreLink i {
+  padding: 10px;
+}
+
+.readMoreLinkContainer .readMoreLink:hover {
+  text-decoration: none;
+  color: darkgoldenrod;
 }
 
 .chapterListContainer {

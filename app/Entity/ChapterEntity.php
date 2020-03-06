@@ -30,8 +30,14 @@ class ChapterEntity extends Entity
         }
 
         // die(var_dump($checkHtmlEnd));
+        $html .=  
+            '<p class="readMoreLinkContainer">
+                <a href="' . $this->getURL() . '" class="readMoreLink">
+                    <i class="fas fa-book-open"></i>
+                    Lire le chapitre
+                </a>
+            </p>';
 
-        $html .=  '<p><a href="' . $this->getURL() . '" class="readMoreLink">Lire la suite</a></p>';
         return $html;
     }
 }

@@ -23,7 +23,8 @@
 //-> --- CHAPTER LIST
 
 .latestChaptersContainer {
-    border: 2px solid purple;
+    border: none;
+    border-right: 2px solid purple;
     padding: 30px;
 
     h3 {
@@ -40,7 +41,7 @@
             font-style: italic;
         }
 
-        .latestChapterSingleContent, .latestChapterSingleContent p {
+        .latestChapterSingleContent{
             color: black;
             background: #ececec;
             padding: 10px;
@@ -49,8 +50,25 @@
     }
 }
 
-.readMoreLink {
-    color: purple;
+.readMoreLinkContainer {
+    display: flex;
+    justify-content: flex-end;
+    justify-items: flex-end;
+    width: 100%;
+
+    .readMoreLink {
+        color: purple;
+        transition: all 0.3s ease-in-out;
+
+        i {
+            padding: 10px;
+        }
+
+        &:hover {
+            text-decoration: none;
+            color: darkgoldenrod;
+        }
+    }
 }
 
 //-> --- CHAPTER SIDEBAR
