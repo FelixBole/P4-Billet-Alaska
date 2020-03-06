@@ -12,6 +12,7 @@
 
 <form method="post">
     <?= $form->input('title', 'Titre du chapitre'); ?>
-    <?= $form->input('content', 'Contenu du chapitre', ['type' => 'textarea']); ?>
+    <?= $tinyForm->tinyInput('basic-example', 'content', 'Contenu du chapitre'); ?>
+
     <button class="btn btn-primary">Sauvegarder les modifications</button>
 </form>

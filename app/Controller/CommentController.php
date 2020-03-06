@@ -26,8 +26,15 @@ class CommentController extends ChapterController
                     ]
                 );
                 if($result) {
+                    // Clear form
+                    $_POST['name'] = "";
+                    $_POST['message'] = "";
+
+                    // Comment confirm
+                    $success = "Votre commentaire a bien été ajouté";
+
                     // Redirect to chapter with the newly added comment
-                    return $this->show();
+                    return $this->show(null, $success);
                 }
             }
         }
@@ -46,6 +53,8 @@ class CommentController extends ChapterController
             'reports' => $reports
         ]);
 
-        return $this->show();
+        $success = "Merci d'avoir signalé ce commentaire, il sera pris en charge rapidement";
+
+        return $this->show(null, $success);
     }
 }

@@ -1,42 +1,111 @@
-.userComment {
-    background-color: rgba(189, 183, 107, 0.678);
-    border: 1px solid beige;
+//# ------------ GENERAL
+.separator {
+    height: 2px;
+    width: 100%;
+    background-color: purple;
+}
+
+//# ---------- SHOW CHAPTER PAGE
+
+//-> --- CHAPTER CONTENT
+
+.chapterContainer {
+
+    border: 5px solid #ececec;
     border-radius: 10px;
 
-    .userCommentInfo {
-        border-bottom: 1px solid cadetblue;
-
-            h5 {
-                display: inline;
-                color: darkblue;
-                font-weight: bold;
-            }
-
-            p {
-                display: inline;
-                font-style: italic;
-                margin: 0;
-            }
-
-        }
+    .chapterTitle {
+        border: 3px solid beige;
+        background: rgb(233, 233, 191);
+        border-radius: 3px;
+        padding: 20px;
         
+        h1 {
+            font-size: 40px;
+        }
+    }
+
+    .chapterBody {
+        padding: 25px;
+        background: beige;
+    }
+}
+
+//-> --- CHAPTER NAV
+.chapterNavBtn, .commentBtn {
+    border: 2px solid purple;
+    background: purple;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 20px;
+    color: white;
+    transition: all 0.2s ease;
+
+    &:hover {
+        text-decoration: none;
+        color: black;
+        background: none;
+    }
+}
+
+.activeChapter {
+    background: purple;
+    
+    a i, a span{
+        color: white;
+    }
+}
+
+//-> --- COMMENTS
+
+.userCommentContainer {
+
+    .userCommentBody {
+        height: auto;
+        margin: 20px 10px;
+        padding: 5px;
+        background-color: #DADADA;
+        border-radius: 3px;
+        border: 5px solid #ccc;
+
+        .userCommentInfo {
+            display: flex;
+            justify-content: space-between;
+        }
+
         .userCommentMessage {
-            padding-top: 5px;
-            margin-top: 5px;
-            margin-bottom: 2px;
-            border-radius: 5px;
-            background-color: white;
+            background: white;
+            padding: 2px;
+            position: relative;
+            min-height: 30px;
+            border-radius: 3px;
+            font-family: Arial;
+            font-size: 14px;
+            line-height: 1.5;
+            color: black;
+
+            .arrow {
+                position: absolute;
+                width: 0px;
+                height: 0px;
+                background: transparent;
+                border: 10px solid white;
+                top: -20px;
+                left: 10px;
+                border-right-color: transparent;
+                border-left-color: transparent;
+                border-top-color: transparent;
+            }
         }
 
         form {
             display: flex;
             justify-content: flex-end;
-            margin-bottom: 5px;
-
-            .reportBtn {
-                background: none;
+            button {
                 border: none;
-                color: rgb(189, 16, 16);
+                background: none;
+                color: rgb(172, 21, 21);
             }
         }
     }
+}
