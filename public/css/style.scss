@@ -1,8 +1,16 @@
+$c1: rgb(243, 194, 129);
+
 //# ------------ GENERAL -------------------
+
+
+body {
+    background-image: url("/P4-Alaska/public/img/beige-tiles.png");
+}
+
 .separator {
     height: 2px;
     width: 100%;
-    background-color: purple;
+    background-color: $c1;
 }
 
 //# ------------ HOME PAGE ----------------------
@@ -10,9 +18,9 @@
 //-> --- TITLES
 
 .homePageTitle {
-    background: #ececec;
+    background-image: url('/P4-Alaska/public/img/topography.png');
     border-radius: 5px;
-    border: 10px solid purple;
+    border: 10px solid $c1;
     padding: 50px;
 
     h2 {
@@ -23,8 +31,7 @@
 //-> --- CHAPTER LIST
 
 .latestChaptersContainer {
-    border: none;
-    border-right: 2px solid purple;
+    border-right: 2px solid $c1;
     padding: 30px;
 
     h3 {
@@ -36,6 +43,7 @@
         border-bottom: 2px solid grey;
 
         h2 a {
+            padding-left: 20px;
             color: black;
             font-size: 1.5rem;
             font-style: italic;
@@ -57,7 +65,7 @@
     width: 100%;
 
     .readMoreLink {
-        color: purple;
+        color: darkgoldenrod;
         transition: all 0.3s ease-in-out;
 
         i {
@@ -66,7 +74,7 @@
 
         &:hover {
             text-decoration: none;
-            color: darkgoldenrod;
+            color: darkorange;
         }
     }
 }
@@ -74,23 +82,23 @@
 //-> --- CHAPTER SIDEBAR
 
 .chapterListContainer {
-    border: 2px solid purple;
+    border: 2px solid $c1;
     border-radius: 5px;
 
     .chapterListTitle {
         text-align: center;
         font-weight: bold;
-        border-color: purple;
+        border-color: $c1;
     }
 
     .chapterListLink {
-        border-color: purple;
+        border-color: $c1;
         transition: all 0.15s ease;
         color: black;
 
         &:hover {
             color: white;
-            background-color: rgb(133, 21, 133);
+            background-color: $c1;
             font-weight: bold; 
             text-decoration: none;
         }
@@ -108,8 +116,10 @@
     border-radius: 10px;
 
     .chapterTitle {
-        border: 3px solid beige;
-        background: rgb(233, 233, 191);
+        background-image: url('/P4-Alaska/public/img/topography.png');
+        color: rgb(32, 30, 30);
+        font-weight: bold;
+        // border: 3px solid $c1;
         border-radius: 3px;
         padding: 20px;
         
@@ -120,14 +130,14 @@
 
     .chapterBody {
         padding: 25px;
-        background: beige;
+        background: whitesmoke;
     }
 }
 
 //-> --- CHAPTER NAV
 .chapterNavBtn, .commentBtn {
-    border: 2px solid purple;
-    background: purple;
+    border: 2px solid $c1;
+    background: $c1;
     margin: 10px;
     padding: 10px;
     border-radius: 20px;
@@ -142,7 +152,7 @@
 }
 
 .activeChapter {
-    background: purple;
+    background: $c1;
     
     a i, a span{
         color: white;

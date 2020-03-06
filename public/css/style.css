@@ -1,13 +1,17 @@
+body {
+  background-image: url("/P4-Alaska/public/img/beige-tiles.png");
+}
+
 .separator {
   height: 2px;
   width: 100%;
-  background-color: purple;
+  background-color: #f3c281;
 }
 
 .homePageTitle {
-  background: #ececec;
+  background-image: url("/P4-Alaska/public/img/topography.png");
   border-radius: 5px;
-  border: 10px solid purple;
+  border: 10px solid #f3c281;
   padding: 50px;
 }
 
@@ -16,8 +20,7 @@
 }
 
 .latestChaptersContainer {
-  border: none;
-  border-right: 2px solid purple;
+  border-right: 2px solid #f3c281;
   padding: 30px;
 }
 
@@ -31,6 +34,7 @@
 }
 
 .latestChaptersContainer .latestChapterSingle h2 a {
+  padding-left: 20px;
   color: black;
   font-size: 1.5rem;
   font-style: italic;
@@ -54,7 +58,7 @@
 }
 
 .readMoreLinkContainer .readMoreLink {
-  color: purple;
+  color: darkgoldenrod;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
@@ -65,22 +69,22 @@
 
 .readMoreLinkContainer .readMoreLink:hover {
   text-decoration: none;
-  color: darkgoldenrod;
+  color: darkorange;
 }
 
 .chapterListContainer {
-  border: 2px solid purple;
+  border: 2px solid #f3c281;
   border-radius: 5px;
 }
 
 .chapterListContainer .chapterListTitle {
   text-align: center;
   font-weight: bold;
-  border-color: purple;
+  border-color: #f3c281;
 }
 
 .chapterListContainer .chapterListLink {
-  border-color: purple;
+  border-color: #f3c281;
   -webkit-transition: all 0.15s ease;
   transition: all 0.15s ease;
   color: black;
@@ -88,7 +92,7 @@
 
 .chapterListContainer .chapterListLink:hover {
   color: white;
-  background-color: #851585;
+  background-color: #f3c281;
   font-weight: bold;
   text-decoration: none;
 }
@@ -99,8 +103,9 @@
 }
 
 .chapterContainer .chapterTitle {
-  border: 3px solid beige;
-  background: #e9e9bf;
+  background-image: url("/P4-Alaska/public/img/topography.png");
+  color: #201e1e;
+  font-weight: bold;
   border-radius: 3px;
   padding: 20px;
 }
@@ -111,12 +116,12 @@
 
 .chapterContainer .chapterBody {
   padding: 25px;
-  background: beige;
+  background: whitesmoke;
 }
 
 .chapterNavBtn, .commentBtn {
-  border: 2px solid purple;
-  background: purple;
+  border: 2px solid #f3c281;
+  background: #f3c281;
   margin: 10px;
   padding: 10px;
   border-radius: 20px;
@@ -132,7 +137,7 @@
 }
 
 .activeChapter {
-  background: purple;
+  background: #f3c281;
 }
 
 .activeChapter a i, .activeChapter a span {
