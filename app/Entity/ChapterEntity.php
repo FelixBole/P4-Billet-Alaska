@@ -16,8 +16,22 @@ class ChapterEntity extends Entity
     }
 
     public function getExcerpt() {
-        $html = '<p>' . substr($this->content,0, 150) . '...</p>';
-        $html .=  '<p><a href="' . $this->getURL() . '">Lire la suite</a></p>';
+        $html = substr($this->content, 0, 150);
+        // Verify if the strings ends with a </p> or not (for tinyMCE)
+        $tag = '</p>';
+        $tagLength = strlen($tag);
+        $checkHtmlEnd = (substr($html, 0, $tagLength) === $tag);
+
+        if($checkHtmlEnd) {
+            $html = '<div class="latestChapterSingleContent">' . substr($this->content,0, 150) . '...</div>';
+        } else {
+            // If it doesn't end with a </p> add an extra one
+            $html = '<div class="latestChapterSingleContent">' . substr($this->content,0, 150) . '...</p></div>';
+        }
+
+        // die(var_dump($checkHtmlEnd));
+
+        $html .=  '<p><a href="' . $this->getURL() . '" class="readMoreLink">Lire la suite</a></p>';
         return $html;
     }
 }

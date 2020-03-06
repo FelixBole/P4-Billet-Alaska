@@ -1,11 +1,86 @@
-//# ------------ GENERAL
+//# ------------ GENERAL -------------------
 .separator {
     height: 2px;
     width: 100%;
     background-color: purple;
 }
 
-//# ---------- SHOW CHAPTER PAGE
+//# ------------ HOME PAGE ----------------------
+
+//-> --- TITLES
+
+.homePageTitle {
+    background: #ececec;
+    border-radius: 5px;
+    border: 10px solid purple;
+    padding: 50px;
+
+    h2 {
+        font-style: italic;
+    }
+}
+
+//-> --- CHAPTER LIST
+
+.latestChaptersContainer {
+    border: 2px solid purple;
+    padding: 30px;
+
+    h3 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .latestChapterSingle {
+        border-bottom: 2px solid grey;
+
+        h2 a {
+            color: black;
+            font-size: 1.5rem;
+            font-style: italic;
+        }
+
+        .latestChapterSingleContent, .latestChapterSingleContent p {
+            color: black;
+            background: #ececec;
+            padding: 10px;
+        }
+
+    }
+}
+
+.readMoreLink {
+    color: purple;
+}
+
+//-> --- CHAPTER SIDEBAR
+
+.chapterListContainer {
+    border: 2px solid purple;
+    border-radius: 5px;
+
+    .chapterListTitle {
+        text-align: center;
+        font-weight: bold;
+        border-color: purple;
+    }
+
+    .chapterListLink {
+        border-color: purple;
+        transition: all 0.15s ease;
+        color: black;
+
+        &:hover {
+            color: white;
+            background-color: rgb(133, 21, 133);
+            font-weight: bold; 
+            text-decoration: none;
+        }
+    }
+}
+
+
+//# ---------- SHOW CHAPTER PAGE ------------------
 
 //-> --- CHAPTER CONTENT
 
