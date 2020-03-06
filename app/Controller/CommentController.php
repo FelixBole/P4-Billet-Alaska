@@ -26,8 +26,15 @@ class CommentController extends ChapterController
                     ]
                 );
                 if($result) {
+                    // Clear form
+                    $_POST['name'] = "";
+                    $_POST['message'] = "";
+
+                    // Comment confirm
+                    $success = "Votre commentaire a bien été ajouté";
+
                     // Redirect to chapter with the newly added comment
-                    return $this->show();
+                    return $this->show(null, $success);
                 }
             }
         }

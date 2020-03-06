@@ -24,7 +24,7 @@ class ChapterController extends AppController
         $this->render('chapter.index', compact('lastChapters', 'chapters'));
     }
 
-    public function show($err = null) {
+    public function show($err = null, $success = null) {
         $chapters = $this->Chapter->all();
         $chapter = $this->Chapter->find($_GET['id']);
         $comments = $this->Comment->getAllFromChapter($_GET['id']);
@@ -36,11 +36,12 @@ class ChapterController extends AppController
         // Commenting form
         $form = new BootstrapForm($_POST);
 
-        // Catch potential errors
+        // Get potential messages
         $errors = $err;
+        $commentConfirm = $success;
 
         // send variables
-        $this->render('chapter.show', compact('chapter', 'chapters', 'nextChapter', 'prevChapter', 'comments', 'form', 'errors'));
+        $this->render('chapter.show', compact('chapter', 'chapters', 'nextChapter', 'prevChapter', 'comments', 'form', 'errors', 'commentConfirm'));
     }
 
 }

@@ -49,6 +49,12 @@
     </div>
 <?php endif; ?>
 
+<?php if(!is_null($commentConfirm)): ?>
+    <div class="alert alert-success">
+        <?= $commentConfirm ?>
+    </div>
+<?php endif; ?>
+
 <?php if(empty($comments)): ?>
     <div class="noComment">
         Il n'y a pas de commentaires sur ce chapitre
