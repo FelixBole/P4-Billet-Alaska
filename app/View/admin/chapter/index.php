@@ -10,17 +10,17 @@
     <p><a href="?p=admin.chapter.new" class='btn btn-success'>Nouveau chapitre</a></p>
 </div>
 
-<table class='table'>
+<table class='table table-striped table-dark'>
     <thead>
     <tr>
-        <td>ID</td>
-        <td>Titre</td>
-        <td>Actions</td>
+        <th scope="col">ID</td>
+        <th scope="col">Titre</td>
+        <th scope="col">Actions</td>
     </tr>
     </thead>
     <Tbody>
         <?php foreach($chapters as $chapter): ?>
-            <tr>
+            <tr scope="row">
                 <td><?= $chapter->id ?></td>
                 <td><?= $chapter->title ?></td>
                 <td>
