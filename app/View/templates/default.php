@@ -51,7 +51,12 @@
 <body>
 
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="index.php">Alaska</a>
+        <a class="navbar-brand" href="index.php">Accueil</a>
+        <ul class="nav">
+            <li class="nav-item"><a href="?p=users.login" class="nav-link">DEV - LOGIN</a></li>
+            <li class="nav-item"><a href="?p=admin.chapter.index" class="nav-link">DEV - ADMIN - CHAPTERS</a></li>
+            <li class="nav-item"><a href="?p=admin.comment.index" class="nav-link">DEV - ADMIN - COMMENTS</a></li>
+        </ul>
     </nav>
 
     <main role="main" class="container" style='padding-top: 100px;'>
