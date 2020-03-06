@@ -53,6 +53,8 @@ class CommentController extends ChapterController
             'reports' => $reports
         ]);
 
-        return $this->show();
+        $success = "Merci d'avoir signalé ce commentaire, il sera pris en charge rapidement";
+
+        return $this->show(null, $success);
     }
 }
