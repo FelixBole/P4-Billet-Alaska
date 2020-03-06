@@ -2,6 +2,10 @@
 
 <h1>Gérer les chapitres</h1>
 
+<ul class="nav">
+    <li class="nav-item"><a href="?p=admin.comment.index" class="nav-link">Gestion des commentaires</a></li>
+</ul>
+
 <div>
     <p><a href="?p=admin.chapter.new" class='btn btn-success'>Nouveau chapitre</a></p>
 </div>

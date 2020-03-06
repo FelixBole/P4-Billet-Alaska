@@ -1,5 +1,9 @@
 <h1>Gérer les commentaires</h1>
 
+<ul class="nav">
+    <li class="nav-item"><a href="?p=admin.chapter.index" class="nav-link">Gestion des chapitres</a></li>
+</ul>
+
 <table class='table'>
     <thead>
     <tr>

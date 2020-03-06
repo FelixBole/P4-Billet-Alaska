@@ -4,6 +4,95 @@
   background-color: purple;
 }
 
+.homePageTitle {
+  background: #ececec;
+  border-radius: 5px;
+  border: 10px solid purple;
+  padding: 50px;
+}
+
+.homePageTitle h2 {
+  font-style: italic;
+}
+
+.latestChaptersContainer {
+  border: none;
+  border-right: 2px solid purple;
+  padding: 30px;
+}
+
+.latestChaptersContainer h3 {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.latestChaptersContainer .latestChapterSingle {
+  border-bottom: 2px solid grey;
+}
+
+.latestChaptersContainer .latestChapterSingle h2 a {
+  color: black;
+  font-size: 1.5rem;
+  font-style: italic;
+}
+
+.latestChaptersContainer .latestChapterSingle .latestChapterSingleContent {
+  color: black;
+  background: #ececec;
+  padding: 10px;
+}
+
+.readMoreLinkContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  justify-items: flex-end;
+  width: 100%;
+}
+
+.readMoreLinkContainer .readMoreLink {
+  color: purple;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.readMoreLinkContainer .readMoreLink i {
+  padding: 10px;
+}
+
+.readMoreLinkContainer .readMoreLink:hover {
+  text-decoration: none;
+  color: darkgoldenrod;
+}
+
+.chapterListContainer {
+  border: 2px solid purple;
+  border-radius: 5px;
+}
+
+.chapterListContainer .chapterListTitle {
+  text-align: center;
+  font-weight: bold;
+  border-color: purple;
+}
+
+.chapterListContainer .chapterListLink {
+  border-color: purple;
+  -webkit-transition: all 0.15s ease;
+  transition: all 0.15s ease;
+  color: black;
+}
+
+.chapterListContainer .chapterListLink:hover {
+  color: white;
+  background-color: #851585;
+  font-weight: bold;
+  text-decoration: none;
+}
+
 .chapterContainer {
   border: 5px solid #ececec;
   border-radius: 10px;
