@@ -33,7 +33,7 @@ class ChapterController extends AppController {
                 $result = $this->Chapter->create(
                     [
                         'title' => htmlspecialchars($_POST['title']),
-                        'content' => nl2br(htmlspecialchars($_POST['content']))
+                        'content' => $_POST['content']
                     ]
                 );
                 if ($result) {
