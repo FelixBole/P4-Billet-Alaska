@@ -1,7 +1,7 @@
 <h1>Gérer les commentaires</h1>
 
 <ul class="nav">
-    <li class="nav-item"><a href="?p=admin.chapter.index" class="nav-link">Gestion des chapitres</a></li>
+    <li class="nav-item"><a href="?p=admin.chapter.index" class="btn btn-success adminNavBtn">Gestion des chapitres</a></li>
 </ul>
 
 <table class='table table-striped table-dark mt-2'>

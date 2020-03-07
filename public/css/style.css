@@ -204,6 +204,8 @@ body {
 
 .adminNavBtn {
   margin: 5px;
+  color: black;
+  background: white;
 }
 
 .adminHelpInfo {
