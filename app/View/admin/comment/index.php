@@ -4,12 +4,16 @@
     <li class="nav-item"><a href="?p=admin.chapter.index" class="nav-link">Gestion des chapitres</a></li>
 </ul>
 
+<<<<<<< HEAD
 <table class='table'>
+=======
+<table class='table table-striped table-dark mt-2'>
+>>>>>>> dev
     <thead>
     <tr>
-        <td>Chapitre</td>
-        <td>Commentaires</td>
-        <td>Voir les commentaires</td>
+        <th scope="col">Chapitre</th>
+        <th scope="col">Commentaires</th>
+        <th scope="col">Voir les commentaires</th>
     </tr>
     </thead>
     <tbody>

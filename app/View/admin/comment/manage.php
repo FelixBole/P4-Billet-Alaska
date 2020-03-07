@@ -1,29 +1,39 @@
 <a href="?p=admin.comment.index">Index</a>
 
-<h1>Gestion des commentaires</h1>
+<div class="row">
+    <h1>Gestion des commentaires</h1>
+</div>
+<div class="row adminHelpInfo">
+    <p>
+        Liste des commentaires du chapitre sélectionné <br/> <br/>
+        La première liste concerne les commentaires qui ont été signalés par des utilisateurs ainsi que le nombre de signalements que le commentaire à reçu. <br/>
+        L'action <span style="color:goldenrod">Nettoyer</span> annulera les signalements, tandis que l'action <span style="color:red">Supprimer</span> 
+        supprimera définitivement le commentaire.
+    </p>
+</div>
 
-<h2>Commentaires signalés</h2>
+<h2 class="mt-4">Commentaires signalés</h2>
 
-<table class='table'>
+<table class='table table-striped table-dark mt-3'>
     <thead>
     <tr>
-        <td>Nom</td>
-        <td>Commentaire</td>
-        <td>Signalements</td>
-        <td>Action</td>
+        <th scope="col">Nom</th>
+        <th scope="col">Commentaire</th>
+        <th scope="col">Signalements</th>
+        <th scope="col">Actions</th>
     </tr>
     </thead>
     <tbody>
         <?php foreach($reportedComments as $reported): ?>
                 <tr>
                     <td><?= $reported->name ?></td>
-                    <td><?= $reported->message ?></td>
+                    <td><?= substr($reported->message, 0, 50) . "..." ?></td>
                     <!-- Fixed ambiguity, do the same in index -->
-                    <td><?= $reported->reports ?></td>
+                    <td><?= $reported->reports ?> fois</td>
                     <td>
                         <form action="?p=admin.comment.clear&id=<?= $_GET['id'] ?>" method="post" style="display: inline;">
                             <input type="hidden" name="id" value="<?= $reported->id; ?>">
-                            <button type="submit" class="btn btn-warning">Annuler les signalements</button>
+                            <button type="submit" class="btn btn-warning">Nettoyer</button>
                         </form>
                         <form action="?p=admin.comment.delete&id=<?= $_GET['id'] ?>" method="post" style="display: inline;">
                             <input type="hidden" name="id" value="<?= $reported->id; ?>">
@@ -35,14 +45,16 @@
     </tbody>
 </table>
 
+<div class="separator"></div>
+
 <h2>Autres commentaires</h2>
 
-<table class='table'>
+<table class='table table-striped table-dark'>
     <thead>
     <tr>
-        <td>Nom</td>
-        <td>Commentaire</td>
-        <td>Action</td>
+        <th>Nom</th>
+        <th>Commentaire</th>
+        <th>Action</th>
     </tr>
     </thead>
     <tbody>

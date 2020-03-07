@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //# ------------ GENERAL -------------------
 .separator {
     height: 2px;
@@ -13,6 +14,31 @@
     background: #ececec;
     border-radius: 5px;
     border: 10px solid purple;
+=======
+$c1: rgb(243, 194, 129);
+
+//# ------------ GENERAL -------------------
+
+
+body {
+    background-image: url("/P4-Alaska/public/img/beige-tiles.png");
+}
+
+.separator {
+    height: 2px;
+    width: 100%;
+    background-color: $c1;
+}
+
+//# ------------ HOME PAGE ----------------------
+
+//-> --- TITLES
+
+.homePageTitle {
+    background-image: url('/P4-Alaska/public/img/topography.png');
+    border-radius: 5px;
+    border: 10px solid $c1;
+>>>>>>> dev
     padding: 50px;
 
     h2 {
@@ -23,8 +49,12 @@
 //-> --- CHAPTER LIST
 
 .latestChaptersContainer {
+<<<<<<< HEAD
     border: none;
     border-right: 2px solid purple;
+=======
+    border-right: 2px solid $c1;
+>>>>>>> dev
     padding: 30px;
 
     h3 {
@@ -36,10 +66,15 @@
         border-bottom: 2px solid grey;
 
         h2 a {
+<<<<<<< HEAD
+=======
+            padding-left: 20px;
+>>>>>>> dev
             color: black;
             font-size: 1.5rem;
             font-style: italic;
         }
+<<<<<<< HEAD
 
         .latestChapterSingleContent{
             color: black;
@@ -94,6 +129,62 @@
             font-weight: bold; 
             text-decoration: none;
         }
+=======
+
+        .latestChapterSingleContent{
+            color: black;
+            background: #ececec;
+            padding: 10px;
+        }
+
+    }
+}
+
+.readMoreLinkContainer {
+    display: flex;
+    justify-content: flex-end;
+    justify-items: flex-end;
+    width: 100%;
+
+    .readMoreLink {
+        color: darkgoldenrod;
+        transition: all 0.3s ease-in-out;
+
+        i {
+            padding: 10px;
+        }
+
+        &:hover {
+            text-decoration: none;
+            color: darkorange;
+        }
+    }
+}
+
+//-> --- CHAPTER SIDEBAR
+
+.chapterListContainer {
+    border: 2px solid $c1;
+    border-radius: 5px;
+
+    .chapterListTitle {
+        text-align: center;
+        font-weight: bold;
+        border-color: $c1;
+    }
+
+    .chapterListLink {
+        border-color: $c1;
+        transition: all 0.15s ease;
+        color: black;
+
+        &:hover {
+            color: white;
+            background-color: $c1;
+            font-weight: bold; 
+            text-decoration: none;
+        }
+>>>>>>> dev
     }
 }
 
@@ -108,8 +199,15 @@
     border-radius: 10px;
 
     .chapterTitle {
+<<<<<<< HEAD
         border: 3px solid beige;
         background: rgb(233, 233, 191);
+=======
+        background-image: url('/P4-Alaska/public/img/topography.png');
+        color: rgb(32, 30, 30);
+        font-weight: bold;
+        // border: 3px solid $c1;
+>>>>>>> dev
         border-radius: 3px;
         padding: 20px;
         
@@ -120,14 +218,23 @@
 
     .chapterBody {
         padding: 25px;
+<<<<<<< HEAD
         background: beige;
+=======
+        background: whitesmoke;
+>>>>>>> dev
     }
 }
 
 //-> --- CHAPTER NAV
 .chapterNavBtn, .commentBtn {
+<<<<<<< HEAD
     border: 2px solid purple;
     background: purple;
+=======
+    border: 2px solid $c1;
+    background: $c1;
+>>>>>>> dev
     margin: 10px;
     padding: 10px;
     border-radius: 20px;
@@ -142,7 +249,11 @@
 }
 
 .activeChapter {
+<<<<<<< HEAD
     background: purple;
+=======
+    background: $c1;
+>>>>>>> dev
     
     a i, a span{
         color: white;
@@ -201,4 +312,26 @@
             }
         }
     }
+<<<<<<< HEAD
+=======
+}
+
+//# ------------ ADMIN
+
+//-> ADMIN NAVIGATION
+
+.adminNavBtn {
+    margin: 5px;
+}
+
+.adminHelpInfo {
+    background-image: url('/P4-Alaska/public/img/topography.png');
+    padding: 20px;
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+
+    span {
+        font-weight: bold;
+    }
+>>>>>>> dev
 }

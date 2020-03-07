@@ -56,4 +56,8 @@ class CommentModel extends Model
         // $id has to be the chapterId
         return $this->query("SELECT * FROM comments WHERE id_chapter = ? AND reports = 0", [$id], false);
     }
+
+    public function deleteAllFromChapter($id) {
+        return $this->query("DELETE FROM comments WHERE id_chapter = ?", [$id], false);
+    }
 }
