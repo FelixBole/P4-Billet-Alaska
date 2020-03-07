@@ -12,6 +12,7 @@ class ChapterController extends AppController {
 
         // Loading model avoids having to App::getInstance()->getTable('Chapter')
         $this->loadModel('Chapter');
+        $this->loadModel('Comment');
     }
 
     public function index() {
@@ -74,13 +75,12 @@ class ChapterController extends AppController {
     }
 
     public function delete() {
-
-        // Update to database
         if(!empty($_POST)) {
-            $result = $this->Chapter->delete($_POST['id']); // Too dangerous to get the id in get
+            // Clear all comments associated to the chapter
+            $clearComments = $this->Comment->deleteAllFromChapter($_POST['id']);
+            // Delete chapter
+            $result = $this->Chapter->delete($_POST['id']); // Too dangerous to get the id in GET
             return $this->index();
-            // header('Location: admin.php');
-            // var_dump($result);
         }
     }
 
