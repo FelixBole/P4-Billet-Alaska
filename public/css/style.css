@@ -201,4 +201,19 @@ body {
   background: none;
   color: #ac1515;
 }
+
+.adminNavBtn {
+  margin: 5px;
+}
+
+.adminHelpInfo {
+  background-image: url("/P4-Alaska/public/img/topography.png");
+  padding: 20px;
+  border: 2px solid whitesmoke;
+  border-radius: 5px;
+}
+
+.adminHelpInfo span {
+  font-weight: bold;
+}
 /*# sourceMappingURL=style.css.map */

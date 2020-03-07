@@ -212,3 +212,22 @@ body {
         }
     }
 }
+
+//# ------------ ADMIN
+
+//-> ADMIN NAVIGATION
+
+.adminNavBtn {
+    margin: 5px;
+}
+
+.adminHelpInfo {
+    background-image: url('/P4-Alaska/public/img/topography.png');
+    padding: 20px;
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+
+    span {
+        font-weight: bold;
+    }
+}
