@@ -22,6 +22,6 @@ class ChapterModel extends Model
      * @return array 
      */
     public function getLast() {
-        return $this->query('SELECT * FROM chapters ORDER BY date_creation DESC');
+        return $this->query('SELECT * FROM chapters ORDER BY id DESC');
     }
 }
