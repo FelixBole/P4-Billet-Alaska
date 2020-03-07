@@ -1,8 +1,8 @@
-<a href="?p=admin.comment.index">Index</a>
 
 <div class="row">
     <h1>Gestion des commentaires</h1>
 </div>
+<a href="?p=admin.comment.index" class="btn btn-success adminNavBtn">Retour à la page précédente</a>
 <div class="row adminHelpInfo">
     <p>
         Liste des commentaires du chapitre sélectionné <br/> <br/>
@@ -16,34 +16,36 @@
 
 <table class='table table-striped table-dark mt-3'>
     <thead>
-    <tr>
-        <th scope="col">Nom</th>
-        <th scope="col">Commentaire</th>
-        <th scope="col">Signalements</th>
-        <th scope="col">Actions</th>
-    </tr>
+        <tr>
+            <th scope="col">Nom</th>
+            <th scope="col">Commentaire</th>
+            <th scope="col">Signalements</th>
+            <th scope="col">Actions</th>
+        </tr>
     </thead>
     <tbody>
         <?php foreach($reportedComments as $reported): ?>
-                <tr>
-                    <td><?= $reported->name ?></td>
-                    <td><?= substr($reported->message, 0, 50) . "..." ?></td>
-                    <!-- Fixed ambiguity, do the same in index -->
-                    <td><?= $reported->reports ?> fois</td>
-                    <td>
-                        <form action="?p=admin.comment.clear&id=<?= $_GET['id'] ?>" method="post" style="display: inline;">
-                            <input type="hidden" name="id" value="<?= $reported->id; ?>">
-                            <button type="submit" class="btn btn-warning">Nettoyer</button>
-                        </form>
-                        <form action="?p=admin.comment.delete&id=<?= $_GET['id'] ?>" method="post" style="display: inline;">
-                            <input type="hidden" name="id" value="<?= $reported->id; ?>">
-                            <button type="submit" class="btn btn-danger">Supprimer</button>
-                        </form>
-                    </td>
-                </tr>
+            <tr>
+                <td><?= $reported->name ?></td>
+                <td><?= substr($reported->message, 0, 50) . "..." ?></td>
+                <!-- Fixed ambiguity, do the same in index -->
+                <td><?= $reported->reports ?> fois</td>
+                <td>
+                    <form action="?p=admin.comment.clear&id=<?= $_GET['id'] ?>" method="post" style="display: inline;">
+                        <input type="hidden" name="id" value="<?= $reported->id; ?>">
+                        <button type="submit" class="btn btn-warning">Nettoyer</button>
+                    </form>
+                    <form action="?p=admin.comment.delete&id=<?= $_GET['id'] ?>" method="post" style="display: inline;">
+                        <input type="hidden" name="id" value="<?= $reported->id; ?>">
+                        <button type="submit" class="btn btn-danger">Supprimer</button>
+                    </form>
+                </td>
+            </tr>
         <?php endforeach; ?>
     </tbody>
 </table>
+    
+<div class="separator"></div>
 
 <div class="separator"></div>
 
@@ -51,24 +53,24 @@
 
 <table class='table table-striped table-dark'>
     <thead>
-    <tr>
-        <th>Nom</th>
-        <th>Commentaire</th>
-        <th>Action</th>
-    </tr>
+        <tr>
+            <th>Nom</th>
+            <th>Commentaire</th>
+            <th>Action</th>
+        </tr>
     </thead>
     <tbody>
         <?php foreach($comments as $comment): ?>
-                <tr>
-                    <td><?= $comment->name ?></td>
-                    <td><?= $comment->message ?></td>
-                    <td>
-                        <form action="?p=admin.comment.delete&id=<?= $_GET['id'] ?>" method="post" style="display: inline;">
-                            <input type="hidden" name="id" value="<?= $comment->id; ?>">
-                            <button type="submit" class="btn btn-danger">Supprimer</button>
-                        </form>
-                    </td>
-                </tr>
+            <tr>
+                <td><?= $comment->name ?></td>
+                <td><?= $comment->message ?></td>
+                <td>
+                    <form action="?p=admin.comment.delete&id=<?= $_GET['id'] ?>" method="post" style="display: inline;">
+                        <input type="hidden" name="id" value="<?= $comment->id; ?>">
+                        <button type="submit" class="btn btn-danger">Supprimer</button>
+                    </form>
+                </td>
+            </tr>
         <?php endforeach; ?>
     </tbody>
 </table>
