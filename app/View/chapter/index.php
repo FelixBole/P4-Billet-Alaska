@@ -11,11 +11,7 @@
         <h3>Découvrez les derniers chapitres de mon oeuvre</h3>
         <div class="separator"></div>
         <?php foreach($lastChapters as $chapter): ?> <!-- This returns a new Chapter object -->
-<<<<<<< HEAD
-            <div class="row latestChapterSingle mt-2">
-=======
             <div class="latestChapterSingle mt-2">
->>>>>>> dev
                 <h2><a href="<?= $chapter->url; ?>"><?= $chapter->title; ?></a></h2>   
                 <?= $chapter->excerpt; ?>
                 <!-- <?= var_dump($chapter->excerpt); ?> -->

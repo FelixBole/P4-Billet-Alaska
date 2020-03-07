@@ -2,21 +2,9 @@
 
 <h1>Gestion des chapitres</h1>
 
-<<<<<<< HEAD
-<ul class="nav">
-    <li class="nav-item"><a href="?p=admin.comment.index" class="nav-link">Gestion des commentaires</a></li>
-</ul>
-
-<div>
-    <p><a href="?p=admin.chapter.new" class='btn btn-success'>Nouveau chapitre</a></p>
-=======
-
-
-
 <div class="nav mb-2">
     <a href="?p=admin.chapter.new" class='btn btn-success'>Nouveau chapitre</a>
     <a href="?p=admin.comment.index" class="nav-link adminNavBtn">Gérer les commentaires</a>
->>>>>>> dev
 </div>
 
 <table class='table table-striped table-dark'>
