@@ -6,8 +6,7 @@
 - Add commenting functionnality
   - ✔️ Create database table
   - ✔️ Add report system on comments
-  - Deactivate report button once clicked
-- Verify all user inputs
+- ✔️ Verify all user inputs
 
 ***
 ## Backend
