@@ -47,6 +47,8 @@
     
 <div class="separator"></div>
 
+<div class="separator"></div>
+
 <h2>Autres commentaires</h2>
 
 <table class='table table-striped table-dark'>
