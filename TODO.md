@@ -5,9 +5,9 @@
   ***
 - Add commenting functionnality
   - ✔️ Create database table
-  - ✔️ Add report system on comments
-  - Deactivate report button once clicked
-- Verify all user inputs
+  - ✔️ Add report system on comment
+- ✔️ Verify all user inputs
+- Verify responsive
 
 ***
 ## Backend
@@ -15,8 +15,14 @@
 - ✔️ Administration pannel for chapters 💻
 - ✔️ CRUD
 - ✔️ Administration pannel for comments 💻
+- Logout button
+- 
 
 ***
 ## Urls
-- Fix router
+- Fix error page redirection (make 404)
 - Create Menu
+
+***
+## Bonus
+- JQuery Datatable for pagination
