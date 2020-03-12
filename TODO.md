@@ -5,14 +5,9 @@
   ***
 - Add commenting functionnality
   - ✔️ Create database table
-<<<<<<< HEAD
-  - ✔️ Add report system on comments
-- ✔️ Verify all user inputs
-=======
   - ✔️ Add report system on comment
 - ✔️ Verify all user inputs
 - Verify responsive
->>>>>>> master
 
 ***
 ## Backend
