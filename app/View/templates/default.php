@@ -62,6 +62,7 @@
             <li class="nav-item"><a href="?p=users.login" class="nav-link">DEV - LOGIN</a></li>
             <li class="nav-item"><a href="?p=admin.chapter.index" class="nav-link">DEV - ADMIN - CHAPTERS</a></li>
             <li class="nav-item"><a href="?p=admin.comment.index" class="nav-link">DEV - ADMIN - COMMENTS</a></li>
+            <li class="nav-item"><a href="?p=users.logout" class="nav-link">Deconnexion</a></li>
         </ul>
     </nav>
 

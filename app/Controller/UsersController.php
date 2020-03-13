@@ -23,4 +23,12 @@ class UsersController extends AppController{
         $this->render('users.login', compact('form', 'errors'));
     }
 
+    public function logout()
+    {
+        session_start();
+        session_destroy();
+        header('Location: index.php');
+        exit;
+    }
+
 }
