@@ -14,7 +14,7 @@
 
 <h2 class="mt-4">Commentaires signalés</h2>
 
-<table class='table table-striped table-dark mt-3'>
+<table id="adminTableCommentManageSignaled" class='table table-striped mt-3'>
     <thead>
         <tr>
             <th scope="col">Nom</th>
@@ -51,7 +51,7 @@
 
 <h2>Autres commentaires</h2>
 
-<table class='table table-striped table-dark'>
+<table id="adminTableCommentManageUnsignaled" class='table table-striped'>
     <thead>
         <tr>
             <th>Nom</th>

@@ -5,7 +5,7 @@
     <a href="?p=admin.comment.index" class="btn btn-success adminNavBtn">Gérer les commentaires</a>
 </div>
 
-<table class='table table-striped table-dark'>
+<table id="adminTableChapterIndex" class='table table-striped'>
     <thead>
     <tr>
         <th scope="col">ID</td>
