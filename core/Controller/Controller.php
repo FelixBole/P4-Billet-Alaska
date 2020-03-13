@@ -23,11 +23,11 @@ class Controller {
      */
     protected function forbidden() {
         header('HHTP/1.0 403 Forbidden');
-        die('Access denied');
+        die('Accès interdit');
     }
 
     protected function notFound() {
-        header('HHTP/1.0 403 Not Found');
+        header('HHTP/1.0 404 Not Found');
         die('Page not found');
     }
 

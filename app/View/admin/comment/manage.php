@@ -17,10 +17,10 @@
 <table id="adminTableCommentManageSignaled" class='table table-striped mt-3'>
     <thead>
         <tr>
-            <th scope="col">Nom</th>
-            <th scope="col">Commentaire</th>
-            <th scope="col">Signalements</th>
-            <th scope="col">Actions</th>
+            <th>Nom</th>
+            <th>Commentaire</th>
+            <th>Signalements</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>

@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 
     <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
     <!-- TinyMCE -->
     <script src="https://cdn.tiny.cloud/1/dqg6jkjxix54zjp03l9uxaphwjepqs1x2nlb9upt1t0govbc/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
@@ -35,7 +35,6 @@
 
 
     <style>
-
         .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -58,15 +57,15 @@
 
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
         <a class="navbar-brand" href="index.php">Accueil</a>
-        <ul class="nav">
-            <li class="nav-item"><a href="?p=users.login" class="nav-link">DEV - LOGIN</a></li>
-            <li class="nav-item"><a href="?p=admin.chapter.index" class="nav-link">DEV - ADMIN - CHAPTERS</a></li>
-            <li class="nav-item"><a href="?p=admin.comment.index" class="nav-link">DEV - ADMIN - COMMENTS</a></li>
-            <li class="nav-item"><a href="?p=users.logout" class="nav-link">Deconnexion</a></li>
+        <ul class="nav" id="defaultNav">
+            <?php if(isset($_SESSION['auth'])): ?>
+                <li class="nav-item"><a href="?p=admin.chapter.index" class="nav-link">Administration</a></li>
+                <li class="nav-item"><a href="?p=users.logout" class="nav-link">Deconnexion</a></li>
+            <?php endif; ?>
         </ul>
     </nav>
 
-    <main role="main" class="container" style='padding-top: 100px;'>
+    <main class="container" style='padding-top: 100px;'>
 
         <div class="starter-template">
             <?= $content ?>
@@ -76,7 +75,7 @@
     <script src="/P4-Alaska/public/js/tinymce.js"></script>
 
     <!-- Datatables -->
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
 
     <script src="/P4-Alaska/public/js/dataTables.js"></script>
 </body>

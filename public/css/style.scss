@@ -2,6 +2,16 @@ $c1: rgb(243, 194, 129);
 
 //# ------------ GENERAL -------------------
 
+#defaultNav {
+    li a {
+        color: white;
+        transition: all 0.2s ease;
+
+        &:hover {
+            color: sandybrown;
+        }
+    }
+}
 
 body {
     background-image: url("/P4-Alaska/public/img/beige-tiles.png");
