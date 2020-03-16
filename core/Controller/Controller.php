@@ -9,9 +9,18 @@ class Controller {
  
     protected function render($view, $variables) {
         ob_start();
-        // Extract sent variables
-        extract($variables);
-        require($this->viewPath . str_replace('.', DIRECTORY_SEPARATOR, $view) . '.php');
+        
+        $file = $this->viewPath . str_replace('.', DIRECTORY_SEPARATOR, $view) . '.php';
+        // Check if file exists
+        if (file_exists($file)) {
+            // Extract sent variables
+            extract($variables);
+            require ($file);
+        } else {
+            die('send to 404 in core controller here'); // # It never gets here because errors are handled before
+            require (ROOT . DIRECTORY_SEPARATOR .  'View' . DIRECTORY_SEPARATOR . 'error' . DIRECTORY_SEPARATOR . 'error_404');
+        }
+
         $content = ob_get_clean();
         require($this->viewPath . 'templates/' . $this->template . '.php');
     }
@@ -23,11 +32,11 @@ class Controller {
      */
     protected function forbidden() {
         header('HHTP/1.0 403 Forbidden');
-        die('Accès interdit');
+        die('Accès interdit, retour à l\'accueil : <a href="index.php"> Accueil </a>');
     }
 
     protected function notFound() {
-        header('HHTP/1.0 404 Not Found');
+        header('Location: 404.php');
         die('Page not found');
     }
 
