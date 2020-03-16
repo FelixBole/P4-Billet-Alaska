@@ -5,17 +5,17 @@
     <a href="?p=admin.comment.index" class="btn btn-success adminNavBtn">Gérer les commentaires</a>
 </div>
 
-<table class='table table-striped table-dark'>
+<table id="adminTableChapterIndex" class='table table-striped'>
     <thead>
     <tr>
-        <th scope="col">ID</td>
-        <th scope="col">Titre</td>
-        <th scope="col">Actions</td>
+        <th>ID</th>
+        <th>Titre</th>
+        <th>Actions</th>
     </tr>
     </thead>
     <Tbody>
         <?php foreach($chapters as $chapter): ?>
-            <tr scope="row">
+            <tr>
                 <td><?= $chapter->id ?></td>
                 <td><?= $chapter->title ?></td>
                 <td>

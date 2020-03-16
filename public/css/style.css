@@ -1,3 +1,13 @@
+#defaultNav li a {
+  color: white;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+#defaultNav li a:hover {
+  color: sandybrown;
+}
+
 body {
   background-image: url("/P4-Alaska/public/img/beige-tiles.png");
 }

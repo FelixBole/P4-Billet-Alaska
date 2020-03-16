@@ -23,7 +23,7 @@
         <ul class="list-group chapterListContainer">
             <li class="list-group-item chapterListTitle">Liste des chapitres</li>
             <?php foreach($chapters as $chapter): ?>
-                <a class="list-group-item chapterListLink" href="<?= $chapter->url ?>"><?= $chapter->title ?></a>
+                <li class="list-group-item"><a class="list-group-item chapterListLink" href="<?= $chapter->url ?>"><?= $chapter->title ?></a></li>
             <?php endforeach; ?>
         </ul>
     </div>

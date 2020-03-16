@@ -2,6 +2,8 @@
 
 namespace App;
 
+use Exception;
+
 /**
  * Autoloader class registers all app namespace classes
  */
@@ -20,10 +22,15 @@ class Autoloader
     {
         if (strpos($class, __NAMESPACE__ . '\\') === 0)
         {
-            $class = str_replace(__NAMESPACE__ . '\\', '', $class);
-            // $class = str_replace('\\', '/', $class);
-            require __DIR__ . DIRECTORY_SEPARATOR . $class . '.php';
+            $class = str_replace(__NAMESPACE__ . '\\', '', $class);  
+            $class = __DIR__ . DIRECTORY_SEPARATOR . $class . '.php';
+            
+            // Check that file exists before calling
+            if(file_exists($class)) {
+                require $class;
+            } else {
+                throw new Exception('Class not existing, send to 404 here');
+            }
         }
-        // require __DIR__ . DIRECTORY_SEPARATOR . $class . '.php';
     }
 }
