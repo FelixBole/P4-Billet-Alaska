@@ -66,13 +66,13 @@
         </div>
 
     </main><!-- /.container -->
-    <script src="/P4-Alaska/public/js/tinymce.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <!-- Datatables -->
     <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
     <script src="/P4-Alaska/public/js/dataTables.js"></script>
-    <!-- jQuery -->
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <!-- TinyMCE -->
     <script src="https://cdn.tiny.cloud/1/dqg6jkjxix54zjp03l9uxaphwjepqs1x2nlb9upt1t0govbc/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="/P4-Alaska/public/js/tinymce.js"></script>
 </body>
 </html>
