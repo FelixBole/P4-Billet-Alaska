@@ -3,7 +3,7 @@
 ***
 - ✔️ Make condition for next/previous chapter to handle if id does not exist
   ***
-- Add commenting functionnality
+- ✔️Add commenting functionnality
   - ✔️ Create database table
   - ✔️ Add report system on comment
 - ✔️ Verify all user inputs
@@ -15,14 +15,13 @@
 - ✔️ Administration pannel for chapters 💻
 - ✔️ CRUD
 - ✔️ Administration pannel for comments 💻
-- Logout button
-- 
+- ✔️ Logout button
 
 ***
 ## Urls
-- Fix error page redirection (make 404)
-- Create Menu
+- ✔️Fix error page redirection (make 404)
+- ✔️Create Menu
 
 ***
 ## Bonus
-- JQuery Datatable for pagination
+- ✔️ JQuery Datatable for pagination

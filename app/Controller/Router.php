@@ -5,65 +5,68 @@ namespace App\Controller;
 use Core\Controller\Controller;
 use Exception;
 
-class Router {
+class RouteException extends Exception{}
 
+class Router {
     public function routeRequest() {
 
         try {
-            if(isset($_GET['p'])) {
-                $p = $_GET['p'];
+            if (isset($_GET['p'])) {
+                $page = $_GET['p'];
             } else {
-                $p = 'chapter.index';
+                $page = 'chapter.index';
             }
 
-            // Make an array to seperate view from action called
-            $p = explode('.', $p);
+            $page = explode('.', $page); // Makes array
 
-            if(sizeof($p) !== 1) {
+            if (sizeof($page) !== 1 || sizeof($page) > 4) {
 
-                // Admin access
-                if($p[0] == 'admin') {
-                    // Check if array has less than 3 values since all accessible pages have max of 3
-                    if (sizeof($p) < 3) {
-                        if (isset($p[1])) {
-                            $controller = '\App\Controller\Admin\\' . ucfirst($p[1]) . 'Controller';
-                            if (isset($p[2])) {
-                                $action = $p[2];
-                            } else {
-                                throw new Exception('Action not defined', 404);
-                            }
-                        } else {
-                            throw new Exception('Controller not defined', 404);
-                        }
+                if ($page[0] === 'admin') {
+                    // Administration access
+                    if (isset($page[1]) && isset($page[2])) {
+                        $controller = '\App\Controller\Admin\\' . ucfirst($page[1]) . 'Controller';
+                        $action = $page[2];
                     } else {
-                        throw new Exception('Too many parameters', 404);
+                        throw new RouteException('Specified request cannot exist, missing arguments', 404);
                     }
 
-                    // User Access
                 } else {
-                    $controller = '\App\Controller\\' . ucfirst($p[0]) . 'Controller';
-                    if (isset($p[1])) {
-                        $action = $p[1];
+                    // Normal user access
+                    $controller = '\App\Controller\\' . ucfirst($page[0]) . 'Controller';
+                    if (isset($page[1])) {
+                        $action = $page[1];
                     } else {
-                        throw new Exception('Action not defined', 404);
+                        throw new RouteException('Action is not defined', 404);
                     }
                 }
+
             } else {
-                // Since there are no pages accessible without an action specified, send to 404
-                throw new Exception('Page unknown', 404);
+                throw new RouteException('Specified request cannot exist', 404);
             }
-            
-            // Create the called controller and initialise the method
-            $controller = new $controller();
-            $controller->$action();
 
+            // Create conroller and initialise method
+            if (class_exists($controller)) {
+                $controller = new $controller();
 
-        } catch (Exception $e) {
+                // Chek if method exists
+                if (method_exists($controller, $action)) {
+                    $controller->$action();
+                } else {
+                    throw new RouteException('Method does not exist', 404);
+                }
+            } else {
+                throw new RouteException('Controller does not exist', 404);
+            }
+
+        } catch (RouteException $e) {
+            // Handle Exceptions
+            // die($e->getMessage() . ' Captured with code : ' . $e->getCode() . '<br/>Caught On Line : ' . $e->getLine() . " of " . $e->getFile());
+            $errorCtrl = new ErrorController;
             if ($e->getCode() === 404) {
-                header('Location: 404.php');
+                $errorCtrl->errorNotFound();
+            } elseif ($e->getCode() === 403) {
+                $errorCtrl->errorForbidden();
             }
         }
-
     }
-
 }

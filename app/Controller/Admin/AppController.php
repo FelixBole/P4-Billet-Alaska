@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App;
 use App\Controller\AppController as ControllerAppController;
+use App\Controller\ErrorController;
 use Core\Auth\DBAuth;
 
 class AppController extends ControllerAppController {
@@ -16,7 +17,8 @@ class AppController extends ControllerAppController {
         $app = App::getInstance();
         $auth = new DBAuth($app->getDb());
         if(!$auth->logged()) {
-            $this->forbidden();
+            $accessError = new ErrorController;
+            $accessError->errorForbidden();
         }
     }
 

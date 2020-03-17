@@ -1,0 +1,28 @@
+.errorContainer {
+  width: 98vw;
+  height: 98vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: sans-serif;
+}
+
+.errorContainer h1 {
+  font-size: 100px;
+}
+
+.errorContainer p a {
+  text-decoration: underline;
+  color: black;
+}
+/*# sourceMappingURL=errors.css.map */
