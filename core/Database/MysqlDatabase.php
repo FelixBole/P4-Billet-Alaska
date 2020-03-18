@@ -12,7 +12,7 @@ class MysqlDatabase extends Database {
     private $db_host;
     private $_db;
 
-    public function __construct($db_name, $db_user = 'root', $db_pass = '', $db_host = 'localhost') {
+    public function __construct($db_name, $db_user, $db_pass, $db_host) {
         $this->db_name = $db_name;
         $this->db_user = $db_user;
         $this->db_pass = $db_pass;
@@ -25,7 +25,7 @@ class MysqlDatabase extends Database {
     public function getPDO() {
         // Check if database has been already instanciated to avoid doing many connections to database
         if($this->_db === null) {
-            $db = new PDO('mysql:host=localhost;dbname=alaska;charset=utf8', 'root', '');
+            $db = new PDO("mysql:host={$this->db_host};dbname={$this->db_name};charset=utf8", $this->db_user, $this->db_pass);
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $this->_db = $db;
         }

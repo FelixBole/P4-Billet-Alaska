@@ -29,7 +29,9 @@ class Autoloader
             if(file_exists($class)) {
                 require $class;
             } else {
-                throw new Exception('Class not existing, send to 404 here');
+                // throw new Exception('Class not existing, send to 404 here');
+                die("The file {$class} could not be found!");
+
             }
         }
     }
